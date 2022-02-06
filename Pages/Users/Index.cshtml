@@ -1,0 +1,46 @@
+﻿@page
+@model RPCAuthenticationSystem.Pages.Users.IndexModel
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a href="Index" role="button" class="btn btn-success btn-sm">LOG OUT</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.User[0].Username)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.User[0].FirstName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.User[0].LastName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.User[0].BirthDate)
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.User)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Username)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.FirstName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.LastName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.BirthDate)
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
